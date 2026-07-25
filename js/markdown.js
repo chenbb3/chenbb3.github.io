@@ -33,8 +33,11 @@ function parseFrontMatter(raw) {
 async function loadMarkdown(slug, opts = {}) {
   const basePath = opts.isPage ? '/' : '/posts/';
   const url = `${basePath}${slug}.md`;
+  const fullUrl = new URL(url, window.location.origin).href;
 
-  const resp = await fetch(url);
+  console.log('[markdown] fetching:', fullUrl);
+  const resp = await fetch(fullUrl);
+  console.log('[markdown] response:', resp.status, resp.statusText);
   if (!resp.ok) {
     throw new Error(`无法加载文章: ${slug} (${resp.status})`);
   }
