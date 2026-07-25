@@ -1,1 +1,0 @@
-import{_ as s,o as e,c as n,a2 as i}from"./chunks/framework.BWuWLRhz.js";const b=JSON.parse('{"title":"老陈的知识库","description":"","frontmatter":{},"headers":[],"relativePath":"readme.md","filePath":"readme.md"}'),t={name:"readme.md"};function l(p,a,h,r,d,o){return e(),n("div",null,[...a[0]||(a[0]=[i("",18)])])}const g=s(t,[["render",l]]);export{b as __pageData,g as default};
