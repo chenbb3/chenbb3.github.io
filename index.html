@@ -12,6 +12,15 @@
   <!-- marked.js CDN (唯一外部依赖) -->
   <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 
+  <!-- 清除旧 VitePress Service Worker（防止拦截 fetch 请求） -->
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.getRegistrations().then(function(regs) {
+        regs.forEach(function(r) { r.unregister(); });
+      });
+    }
+  </script>
+
   <style>
     /* 页面加载时的模糊渐显效果 */
     .hero__title { filter: blur(0); }
